@@ -134,7 +134,7 @@ const Keyboard = ({ guessLetters, removeLetters, answer, guess, setGuess }) => {
       coloR: "",
     }));
 
-    let setArray = [0, 1, 2, 3, 4];
+    // let setArray = [0, 1, 2, 3, 4];
 
     let index0 = guessCopy.findIndex((e) => e.lettR === answerObjects[0].lettR);
     let index1 = guessCopy.findIndex((e) => e.lettR === answerObjects[1].lettR);

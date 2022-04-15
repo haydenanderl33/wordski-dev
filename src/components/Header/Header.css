@@ -4,24 +4,24 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #4B576C;
   border-bottom: #000 2px solid;
+  background: #4b576c;
 }
 .header-grid {
   display: flex;
-  width: 500px;
-  height: 51px;
-  
+  justify-content: flex-start;
+  flex-direction: row;
 }
 
 .div1 {
-  font-size: 36px;
+  font-size: 20px;
   color: #fff;
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
 }
 .div2 {
+  width: 400px;
   font-size: 36px;
   font-weight: bold;
   color: #fff;
@@ -40,6 +40,6 @@ header {
   font-size: 20px;
   color: #fff;
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
 }
