@@ -7,120 +7,118 @@ const Keyboard = ({ guessLetters, removeLetters, answer, guess, setGuess }) => {
   const [wordBank, setWordBank] = useState();
   const [letters, setLetters] = useState([
     {
-        "lettR": "Q",
-        "coloR": ""
+      lettR: "Q",
+      coloR: "",
     },
     {
-        "lettR": "W",
-        "coloR": ""
+      lettR: "W",
+      coloR: "",
     },
     {
-        "lettR": "E",
-        "coloR": ""
+      lettR: "E",
+      coloR: "",
     },
     {
-        "lettR": "R",
-        "coloR": ""
+      lettR: "R",
+      coloR: "",
     },
     {
-        "lettR": "T",
-        "coloR": ""
+      lettR: "T",
+      coloR: "",
     },
     {
-        "lettR": "Y",
-        "coloR": ""
+      lettR: "Y",
+      coloR: "",
     },
     {
-        "lettR": "U",
-        "coloR": ""
+      lettR: "U",
+      coloR: "",
     },
     {
-        "lettR": "I",
-        "coloR": ""
+      lettR: "I",
+      coloR: "",
     },
     {
-        "lettR": "O",
-        "coloR": ""
+      lettR: "O",
+      coloR: "",
     },
     {
-        "lettR": "P",
-        "coloR": ""
+      lettR: "P",
+      coloR: "",
     },
     {
-        "lettR": "A",
-        "coloR": ""
+      lettR: "A",
+      coloR: "",
     },
     {
-        "lettR": "S",
-        "coloR": ""
+      lettR: "S",
+      coloR: "",
     },
     {
-        "lettR": "D",
-        "coloR": ""
+      lettR: "D",
+      coloR: "",
     },
     {
-        "lettR": "F",
-        "coloR": ""
+      lettR: "F",
+      coloR: "",
     },
     {
-        "lettR": "G",
-        "coloR": ""
+      lettR: "G",
+      coloR: "",
     },
     {
-        "lettR": "H",
-        "coloR": ""
+      lettR: "H",
+      coloR: "",
     },
     {
-        "lettR": "J",
-        "coloR": ""
+      lettR: "J",
+      coloR: "",
     },
     {
-        "lettR": "K",
-        "coloR": ""
+      lettR: "K",
+      coloR: "",
     },
     {
-        "lettR": "L",
-        "coloR": ""
+      lettR: "L",
+      coloR: "",
     },
     {
-        "lettR": "Z",
-        "coloR": ""
+      lettR: "Z",
+      coloR: "",
     },
     {
-        "lettR": "X",
-        "coloR": ""
+      lettR: "X",
+      coloR: "",
     },
     {
-        "lettR": "C",
-        "coloR": ""
+      lettR: "C",
+      coloR: "",
     },
     {
-        "lettR": "V",
-        "coloR": ""
+      lettR: "V",
+      coloR: "",
     },
     {
-        "lettR": "B",
-        "coloR": ""
+      lettR: "B",
+      coloR: "",
     },
     {
-        "lettR": "N",
-        "coloR": ""
+      lettR: "N",
+      coloR: "",
     },
     {
-        "lettR": "M",
-        "coloR": ""
-    }
-]);
+      lettR: "M",
+      coloR: "",
+    },
+  ]);
 
   useEffect(() => {
     getWordBank();
-    
   }, []);
 
   const getWordBank = async () => {
     const response = await fetch("word-bank.json");
     const wordBanks = await response.json();
-    
 
     setWordBank(wordBanks);
   };
@@ -146,7 +144,7 @@ const Keyboard = ({ guessLetters, removeLetters, answer, guess, setGuess }) => {
 
     let indexArr = [index0, index1, index2, index3, index4];
 
-    console.log("indexArr:", indexArr);
+    // console.log("indexArr:", indexArr);
 
     const result = indexArr.filter((e) => e !== -1);
 
@@ -186,36 +184,35 @@ const Keyboard = ({ guessLetters, removeLetters, answer, guess, setGuess }) => {
       }
     }
     for (let i = 0; i < 5; i++) {
-      if(guessCopy[i].coloR === ''){
-        guessCopy[i].coloR = 'transparent'
+      if (guessCopy[i].coloR === "") {
+        guessCopy[i].coloR = "transparent";
       }
     }
 
     let lettersCopy = [...letters];
-    
-    for (let i = 0; i <lettersCopy.length; i++){
-        if(guessCopy[0].lettR === lettersCopy[i].lettR){
-            lettersCopy[i].coloR = guessCopy[0].coloR
-          }
-          if(guessCopy[1].lettR === lettersCopy[i].lettR){
-              lettersCopy[i].coloR = guessCopy[1].coloR
-            }
-            if(guessCopy[2].lettR === lettersCopy[i].lettR){
-                lettersCopy[i].coloR = guessCopy[2].coloR
-              }
-              if(guessCopy[3].lettR === lettersCopy[i].lettR){
-                  lettersCopy[i].coloR = guessCopy[3].coloR
-                }
-                if(guessCopy[4].lettR === lettersCopy[i].lettR){
-                    lettersCopy[i].coloR = guessCopy[4].coloR
-                  }
-                }
-                
+
+    for (let i = 0; i < lettersCopy.length; i++) {
+      if (guessCopy[0].lettR === lettersCopy[i].lettR) {
+        lettersCopy[i].coloR = guessCopy[0].coloR;
+      }
+      if (guessCopy[1].lettR === lettersCopy[i].lettR) {
+        lettersCopy[i].coloR = guessCopy[1].coloR;
+      }
+      if (guessCopy[2].lettR === lettersCopy[i].lettR) {
+        lettersCopy[i].coloR = guessCopy[2].coloR;
+      }
+      if (guessCopy[3].lettR === lettersCopy[i].lettR) {
+        lettersCopy[i].coloR = guessCopy[3].coloR;
+      }
+      if (guessCopy[4].lettR === lettersCopy[i].lettR) {
+        lettersCopy[i].coloR = guessCopy[4].coloR;
+      }
+    }
+
     // for (let i = 0; i <lettersCopy.length; i++){
     //   lettersCopy[i].coloR = ''
     // }
     // console.log('lettersCopy:', lettersCopy)
-    
 
     setLetters(lettersCopy);
 
@@ -235,13 +232,12 @@ const Keyboard = ({ guessLetters, removeLetters, answer, guess, setGuess }) => {
     let fourthGuessArr = [];
     let fifthGuessArr = [];
     let sixthGuessArr = [];
-    
 
     if (guessArr.length === 5) {
       for (let i = 0; i < 5; i++) {
         firstGuessArr.push(guessArr[i]);
       }
-      let success = false;
+      // let success = false;
 
       let word = checkIfWordExists(firstGuessArr);
 
@@ -250,19 +246,18 @@ const Keyboard = ({ guessLetters, removeLetters, answer, guess, setGuess }) => {
 
         setGuess(guessOne);
 
-        for (let i = 0; i < 5; i++) {
-          if (guessOne[i].coloR === "green") {
-            success = true;
-          }
-        }
-        if (success === true) {
-          toast.success("You Got It In One Try!", {
-            position: "",
-            duration: 4000,
-          });
-        }
+        // for (let i = 0; i < 5; i++) {
+        //   if (guessOne[i].coloR === "green") {
+        //     success = true;
+        //   }
+        // }
+        // if (success === true) {
+        //   toast.success("You Got It In One Try!", {
+        //     position: "",
+        //     duration: 4000,
+        //   });
+        // }
       } else {
-
         toast.error("Word Not Found!", { position: "", duration: 4000 });
       }
     }
@@ -274,7 +269,7 @@ const Keyboard = ({ guessLetters, removeLetters, answer, guess, setGuess }) => {
       for (let i = 5; i < 10; i++) {
         secondGuessArr.push(guessArr[i]);
       }
-      let success = false;
+      // let success = false;
 
       let word = checkIfWordExists(secondGuessArr);
 
@@ -286,17 +281,17 @@ const Keyboard = ({ guessLetters, removeLetters, answer, guess, setGuess }) => {
 
         setGuess(combined);
 
-        for (let i = 0; i < 5; i++) {
-          if (guessTwo[i].coloR === "green") {
-            success = true;
-          }
-        }
-        if (success === true) {
-          toast.success("You Got It In Two Tries!", {
-            position: "",
-            duration: 4000,
-          });
-        }
+        // for (let i = 0; i < 5; i++) {
+        //   if (guessTwo[i].coloR === "green") {
+        //     success = true;
+        //   }
+        // }
+        // if (success === true) {
+        //   toast.success("You Got It In Two Tries!", {
+        //     position: "",
+        //     duration: 4000,
+        //   });
+        // }
       } else {
         toast.error("Word Not Found!", { position: "", duration: 4000 });
       }
@@ -313,7 +308,7 @@ const Keyboard = ({ guessLetters, removeLetters, answer, guess, setGuess }) => {
         thirdGuessArr.push(guessArr[i]);
       }
 
-      let success = false;
+      // let success = false;
       let word = checkIfWordExists(thirdGuessArr);
 
       if (word === true) {
@@ -325,17 +320,17 @@ const Keyboard = ({ guessLetters, removeLetters, answer, guess, setGuess }) => {
 
         setGuess(combined);
 
-        for (let i = 0; i < 5; i++) {
-          if (guessThree[i].coloR === "green") {
-            success = true;
-          }
-        }
-        if (success === true) {
-          toast.success("You Got It In Three Tries!", {
-            position: "",
-            duration: 4000,
-          });
-        }
+        // for (let i = 0; i < 5; i++) {
+        //   if (guessThree[i].coloR === "green") {
+        //     success = true;
+        //   }
+        // }
+        // if (success === true) {
+        //   toast.success("You Got It In Three Tries!", {
+        //     position: "",
+        //     duration: 4000,
+        //   });
+        // }
       } else {
         toast.error("Word Not Found!", { position: "", duration: 4000 });
       }
@@ -354,7 +349,7 @@ const Keyboard = ({ guessLetters, removeLetters, answer, guess, setGuess }) => {
         fourthGuessArr.push(guessArr[i]);
       }
 
-      let success = false;
+      // let success = false;
       let word = checkIfWordExists(fourthGuessArr);
 
       if (word === true) {
@@ -367,17 +362,17 @@ const Keyboard = ({ guessLetters, removeLetters, answer, guess, setGuess }) => {
 
         setGuess(combined);
 
-        for (let i = 0; i < 5; i++) {
-          if (guessFour[i].coloR === "green") {
-            success = true;
-          }
-        }
-        if (success === true) {
-          toast.success("You Got It In Four Tries!", {
-            position: "",
-            duration: 4000,
-          });
-        }
+        // for (let i = 0; i < 5; i++) {
+        //   if (guessFour[i].coloR === "green") {
+        //     success = true;
+        //   }
+        // }
+        // if (success === true) {
+        //   toast.success("You Got It In Four Tries!", {
+        //     position: "",
+        //     duration: 4000,
+        //   });
+        // }
       } else {
         toast.error("Word Not Found!", { position: "", duration: 4000 });
       }
@@ -399,7 +394,7 @@ const Keyboard = ({ guessLetters, removeLetters, answer, guess, setGuess }) => {
         fifthGuessArr.push(guessArr[i]);
       }
 
-      let success = false;
+      // let success = false;
       let word = checkIfWordExists(fifthGuessArr);
 
       if (word === true) {
@@ -419,17 +414,17 @@ const Keyboard = ({ guessLetters, removeLetters, answer, guess, setGuess }) => {
 
         setGuess(combined);
 
-        for (let i = 0; i < 5; i++) {
-          if (guessFive[i].coloR === "green") {
-            success = true;
-          }
-        }
-        if (success === true) {
-          toast.success("You Got It In Five Tries!", {
-            position: "",
-            duration: 4000,
-          });
-        }
+        // for (let i = 0; i < 5; i++) {
+        //   if (guessFive[i].coloR === "green") {
+        //     success = true;
+        //   }
+        // }
+        // if (success === true) {
+        //   toast.success("You Got It In Five Tries!", {
+        //     position: "",
+        //     duration: 4000,
+        //   });
+        // }
       } else {
         toast.error("Word Not Found!", { position: "", duration: 4000 });
       }
@@ -455,7 +450,7 @@ const Keyboard = ({ guessLetters, removeLetters, answer, guess, setGuess }) => {
         sixthGuessArr.push(guessArr[i]);
       }
 
-      let success = false;
+      // let success = false;
       let word = checkIfWordExists(sixthGuessArr);
 
       if (word === true) {
@@ -477,17 +472,17 @@ const Keyboard = ({ guessLetters, removeLetters, answer, guess, setGuess }) => {
 
         setGuess(combined);
 
-        for (let i = 0; i < 5; i++) {
-          if (guessSix[i].coloR === "green") {
-            success = true;
-          }
-        }
-        if (success === true) {
-          toast.success("You Got It In Six Tries!", {
-            position: "",
-            duration: 4000,
-          });
-        }
+        // for (let i = 0; i < 5; i++) {
+        //   if (guessSix[i].coloR === "green") {
+        //     success = true;
+        //   }
+        // }
+        // if (success === true) {
+        //   toast.success("You Got It In Six Tries!", {
+        //     position: "",
+        //     duration: 4000,
+        //   });
+        // }
       } else {
         toast.error("Word Not Found!", { position: "", duration: 4000 });
       }

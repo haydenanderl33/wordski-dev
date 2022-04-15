@@ -5,18 +5,17 @@ header {
   justify-content: center;
   align-items: center;
   background-color: #4B576C;
+  border-bottom: #000 2px solid;
 }
 .header-grid {
-  display: grid;
-  grid-template-columns: 36px auto 36px 36px;
-  grid-template-rows: 1fr;
+  display: flex;
   width: 500px;
   height: 51px;
-  border-bottom: #000 2px solid;
+  
 }
 
 .div1 {
-  font-size: 20px;
+  font-size: 36px;
   color: #fff;
   display: flex;
   justify-content: center;
